@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family Tree Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0b0b0d;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 3rem;
+    }
+
+    /* Navigation Bar */
+   .nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #1a1a1a;
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  border-radius: 0; /* remove rounding to cover full width cleanly */
+  width: 100%;
+}
+
+    .nav-bar a {
+      text-decoration: none;
+      color: #ccc;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .nav-bar a:hover {
+      background: linear-gradient(to right, #4a00e0, #8e2de2);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .tree-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .person-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 20px;
+      border-left: 8px solid;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .person-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+
+    .person-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .person-role {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-top: 4px;
+    }
+
+    /* Color Roles */
+    .red { border-color: #ff4d4d; }
+    .green { border-color: #00cc66; }
+    .blue { border-color: #3399ff; }
+    .orange { border-color: #ff9933; }
+    .yellow { border-color: #ffcc00; }
+    .purple { border-color: #cc66ff; }
+    .pink { border-color: #ff66cc; }
+    .gold { border-color: #ffcc66; }
+    .silver { border-color: #c0c0c0; }
+    .black { border-color: #333; }
+
+    /* Back Button */
+    .back-button {
+      display: block;
+      margin: 50px auto;
+      padding: 12px 30px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      width: fit-content;
+    }
+
+    .back-button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .nav-bar {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Family Tree</h1>
+
+  <div class="nav-bar">
+    <a href="homepage.html">Home</a>
+    <a href="aboutb.html">About</a>
+    <a href="celebretion.html">Celebration</a>
+    <a href="event.html">Event</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gailery</a>
+    <a href="welcome-one.html">Welcome-Page</a>
+
+  </div>
+
+  <div class="tree-container">
+    <div class="person-box red">
+      <div class="person-name">Ravi Sharma</div>
+      <div class="person-role">Father</div>
+    </div>
+
+    <div class="person-box pink">
+      <div class="person-name">Suman Sharma</div>
+      <div class="person-role">Mother</div>
+    </div>
+
+    <div class="person-box blue">
+      <div class="person-name">Ankit Sharma</div>
+      <div class="person-role">Brother</div>
+    </div>
+
+    <div class="person-box orange">
+      <div class="person-name">Riya Sharma</div>
+      <div class="person-role">Sister</div>
+    </div>
+
+    <div class="person-box green">
+      <div class="person-name">Grandpa Mohan</div>
+      <div class="person-role">Grandfather</div>
+    </div>
+
+    <div class="person-box yellow">
+      <div class="person-name">Grandma Sunita</div>
+      <div class="person-role">Grandmother</div>
+    </div>
+
+    <div class="person-box purple">
+      <div class="person-name">Vikas Sharma</div>
+      <div class="person-role">Uncle</div>
+    </div>
+
+    <div class="person-box gold">
+      <div class="person-name">Neha Sharma</div>
+      <div class="person-role">Aunt</div>
+    </div>
+
+    <div class="person-box silver">
+      <div class="person-name">Aryan</div>
+      <div class="person-role">Cousin</div>
+    </div>
+  </div>
+
+  <a href="welcome.html" class="back-button">⬅️ Back to Welcome Page</a>
+
+</body>
+</html>

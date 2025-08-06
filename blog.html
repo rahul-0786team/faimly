@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog World</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+    .welcome {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      font-size: 2em;
+      transition: 0.3s;
+    }
+    .welcome:hover {
+      color: #00ffcc;
+      background-color: #222;
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 15px;
+      background-color: #1b1b1b;
+    }
+    .nav-item {
+      text-decoration: none;
+      padding: 10px 20px;
+      background: #333;
+      border-radius: 10px;
+      font-weight: bold;
+      color: white;
+      transition: 0.4s;
+    }
+    .nav-item:hover {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      transform: rotate(3deg) scale(1.05);
+      color: white;
+    }
+    .marquee {
+      background: #000;
+      color: #00ffff;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+      gap: 20px;
+    }
+    .blog-box {
+      width: 250px;
+      background-color: #222;
+      padding: 15px;
+      border-radius: 10px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00ffcc;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #fff, 0 0 30px #0ff;
+    }
+    .blog-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .blog-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+    .blog-actions span:hover {
+      text-decoration: underline;
+      color: #0ff;
+    }
+    .write-blog {
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #1a1a1a;
+      width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #0ff;
+    }
+    .write-blog:hover {
+      background-color: #2a2a2a;
+    }
+    .write-blog h2 {
+      text-align: center;
+      color: #0ff;
+    }
+    label, select, input, textarea {
+      display: block;
+      margin: 10px 0;
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background: #00ffff;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #00ccff;
+      transform: scale(1.05);
+    }
+    @media(max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+      }
+      .blog-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="welcome">🌟 Welcome to Blog World 🌟</div>
+
+  <div class="navbar">
+    <a class="nav-item" href="homepage.html">Home</a>
+    <a class="nav-item" href="aboutb.html">About</a>
+    <a class="nav-item" href="gallery.html">Gallery</a>
+    <a class="nav-item" href="faimlytreethird.html">Blogs</a>
+    <a class="nav-item" href="events.html">Events</a>
+    <a class="nav-item" href="celebretion.html">Contact</a>
+     <a class="nav-item" href="welcome-one.html">welcome-Page</a>
+  </div>
+
+  <marquee class="marquee" behavior="scroll" direction="left">🔥 Trending Blog: "कैसे बनाएं एक शानदार वेबसाइट मोबाइल से ही!" 🔥</marquee>
+
+  <div class="blog-container">
+    <!-- Sample Blog Boxes -->
+    <div class="blog-box" onclick="toggleBlog(this)">
+      <h3>🌈 प्रेरणादायक कहानी</h3>
+      <div class="blog-actions">
+        <span>👍 12</span><span>💬 5</span><span>🔁 3</span>
+      </div>
+      <div class="blog-content">यह कहानी हमें हार नहीं मानने की प्रेरणा देती है...</div>
+    </div>
+    <div class="blog-box" onclick="toggleBlog(this)">
+      <h3>📸 यात्रा का अनुभव</h3>
+      <div class="blog-actions">
+        <span>👍 20</span><span>💬 7</span><span>🔁 8</span>
+      </div>
+      <div class="blog-content">पहाड़ों की वादियों में एक शानदार यात्रा...</div>
+    </div>
+  </div>
+
+  <div class="write-blog">
+    <h2>✍ अपना ब्लॉग लिखें</h2>
+    <label for="font">Font Style</label>
+    <select id="font">
+      <option value="Arial">Arial</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Courier New">Courier New</option>
+    </select>
+    <label for="color">Font Color</label>
+    <input type="color" id="color" value="#ffffff"/>
+    <label for="title">Title</label>
+    <input type="text" id="title" placeholder="Enter Blog Title"/>
+    <label for="content">Your Blog</label>
+    <textarea id="content" rows="6" placeholder="Write your blog here..."></textarea>
+    <label for="image">Upload Image</label>
+    <input type="file" id="image" accept="image/*" />
+    <button onclick="postBlog()">📤 Post Blog</button>
+  </div>
+
+  <script>
+    function toggleBlog(box) {
+      const content = box.querySelector(".blog-content");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+
+    function postBlog() {
+      const font = document.getElementById("font").value;
+      const color = document.getElementById("color").value;
+      const title = document.getElementById("title").value;
+      const content = document.getElementById("content").value;
+
+      if (!title || !content) {
+        alert("Please fill all fields!");
+        return;
+      }
+
+      const box = document.createElement("div");
+      box.className = "blog-box";
+      box.onclick = function() { toggleBlog(box); };
+
+      box.innerHTML = `
+        <h3 style="font-family:${font}; color:${color};">${title}</h3>
+        <div class="blog-actions">
+          <span>👍 0</span><span>💬 0</span><span>🔁 0</span>
+        </div>
+        <div class="blog-content" style="font-family:${font}; color:${color};">${content}</div>
+      `;
+      document.querySelector(".blog-container").appendChild(box);
+      document.getElementById("title").value = "";
+      document.getElementById("content").value = "";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI SaaS Product</title>
+  <style>
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+  color: #ffffff;
+  line-height: 1.6;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Glowing corners */
+body::before {
+  content: '';
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,0,255,0.2), transparent 70%);
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,255,255,0.2), transparent 70%);
+  z-index: 0;
+}
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #111, #000);
+  animation: fadeIn 2s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.family-welcome {
+  color: #fff;
+  font-size: 24px;
+  text-shadow:
+    0 0 5px #00ffee,
+    0 0 10px #00ffee,
+    0 0 20px #00ffee,
+    0 0 40px #00ffee;
+  animation: pulse 2s infinite alternate;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.family-welcome:hover {
+  animation: none;
+  text-shadow:
+    0 0 7px #ff4ecd,
+    0 0 15px #ff4ecd,
+    0 0 30px #ff4ecd,
+    0 0 50px #ff4ecd;
+}
+
+nav {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  border: 2px solid #00ffee;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(120deg, #222, #444);
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: 0.4s ease;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #00ffc8, #001eff);
+  transition: 0.5s;
+  z-index: 0;
+}
+
+nav a:hover::before {
+  left: 0;
+}
+
+nav a span {
+  position: relative;
+  z-index: 1;
+}
+
+nav a:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: radial-gradient(circle at center, #222 0%, #111 100%);
+  animation: fadeIn 2s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gradient-text {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #ff4ecd, #4efeff, #49ff4e, #ffe74e, #ff4e4e);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn.green {
+  background-color: #00ff80;
+  color: #000;
+}
+
+.btn.green:hover {
+  background-color: #00cc66;
+}
+
+.btn.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn.dark:hover {
+  background-color: #555;
+}
+
+/* Features Section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 60px 20px;
+}
+
+.card {
+  background-color: #1d1d1d;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 255, 128, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 128, 0.2);
+}
+
+.card h3 {
+  color: #00ff80;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #ccc;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0d0d0d;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+
+
+
+.family-welcome:hover {
+  /* Animation ko hover par rok dein taaki color stable rahe */
+  animation: none;
+  /* Glow ka naya color set karein */
+  text-shadow:
+    0 0 7px #ff4ecd,
+    0 0 15px #ff4ecd,
+    0 0 30px #ff4ecd,
+    0 0 50px #ff4ecd;
+}
+ .family-welcome {
+  color: #fff; 
+  font-size: 24px; 
+  text-shadow:
+   0 0 5px #00ffee,
+   0 0 10px #00ffee,
+   0 0 20px #00ffee,
+   0 0 40px #00ffee; 
+  animation: pulse 2s infinite alternate;
+  /* Yeh nayi line add karein */
+  transition: text-shadow 0.3s ease-in-out; 
+ }
+
+
+
+
+
+    .gradient-text {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #ff4ecd, #4efeff, #49ff4e, #ffe74e, #ff4e4e);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
+      color: #ffffff;
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    /* Stylish Navbar Box */
+    header {
+      background: linear-gradient(145deg, #1a1a1a, #000);
+      padding: 20px 30px;
+      box-shadow: 0 5px 15px rgba(0, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+   
+
+    nav {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px;
+      border: 2px solid #00ffee;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      background: linear-gradient(120deg, #222, #444);
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: 0.4s ease;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, #00ffc8, #001eff);
+      transition: 0.5s;
+      z-index: 0;
+    }
+
+    nav a:hover::before {
+      left: 0;
+    }
+
+    nav a span {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a:hover {
+      color: #000;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: radial-gradient(circle at center, #222 0%, #111 100%);
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #aaa;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+
+    .btn.green {
+      background-color: #00ff80;
+      color: #000;
+    }
+
+    .btn.green:hover {
+      background-color: #00cc66;
+    }
+
+    .btn.dark {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .btn.dark:hover {
+      background-color: #555;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 60px 20px;
+    }
+
+    .card {
+      background-color: #1d1d1d;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 255, 128, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 255, 128, 0.2);
+    }
+
+    .card h3 {
+      color: #00ff80;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0d0d0d;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        width: 80%;
+        text-align: center;
+      }
+    }
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #00ff80;
+  box-shadow: 0 0 10px rgba(0, 255, 128, 0.5);
+}
+.profile-pic:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+     <h2 class="family-welcome">Welcome to Mishra Family</h2>
+    <nav>
+      <a href="homepage.html"><span>Home</span></a>
+      <a href="aboutb.html"><span>About</span></a>
+      <a href="faimlytreethird.html"><span>Family Tree</span></a>
+      <a href="blog.html"><span>Blog</span></a>
+      <a href="gallery.html"><span>Gallery</span></a>
+      <a href="event.html"><span>Event</span></a>
+      <a href="celebretion.html"><span>Celebration</span></a>
+    </nav>
+  </header>
+ <footer>
+   © 2025 Index AI | All rights reserved.
+    
+   
+  <section class="hero">
+    <h2 class="gradient-text">"Where Love Begins and Never Ends"</h2>
+
+    <p>"Family is not just a group of people living together – it's a bond of unconditional love, unbreakable trust, and endless support. It is where we learn our first values, celebrate our joys, and find strength in our struggles. In every smile, every meal shared, and every memory made – family is the heartbeat of our lives. No matter how far we go, family is the place where we truly belong."</p>
+    <div class="buttons">
+      <button class="btn green">Get Template</button>
+      <button class="btn dark">Learn More</button>
+    </div>
+  </section>
+<div class="card">
+  <img src="images/father.jpg" alt="Father" class="profile-pic">
+  <h3>Papa Ji</h3>
+  <p>संस्कार और प्रेम के स्तंभ। परिवार की रीढ़।</p>
+</div>
+
+  <section class="features">
+    <div class="card">
+      <h3>Scalability</h3>
+      <p>Easily scale your resources up or down based on business needs without hardware limitations.</p>
+    </div>
+    <div class="card">
+      <h3>Cost-effective</h3>
+      <p>Reduce upfront costs with a flexible, subscription-based model for long-term success.</p>
+    </div>
+    <div class="card">
+      <h3>Analytics</h3>
+      <p>Gain valuable insights through built-in analytics and performance optimization tools.</p>
+    </div>
+    <div class="card">
+      <h3>Global Reach</h3>
+      <p>Your users span across the different continents of the world.</p>
+    </div>
+ <div class="card">
+      <h3>Global Reach</h3>
+      <p>Your users span across the different continents of the world.</p>
+    </div>
+
+ <div class="card">
+      <h3>Global Reach</h3>
+      <p>Your users span across the different continents of the world.</p>
+    </div>
+<div class="card">
+      <h3>Global Reach</h3>
+      <p>Your users span across the different continents of the world.</p>
+    </div>
+<div class="card">
+      <h3>Global Reach</h3>
+      <p>Your users span across the different continents of the world.</p>
+    </div>
+
+
+
+
+  </section>
+
+  <footer>
+    © 2025 Index AI | All rights reserved.
+  </footer>
+
+</body>
+</html>
++

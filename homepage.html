@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Family Tree</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: #0d0d0d;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      background: linear-gradient(to right, #f9d423, #ff4e50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    /* Navigation Bar */
+    .nav-box {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, #ff4e50, transparent);
+      animation: lighting 3s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes lighting {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    .nav-box a {
+      position: relative;
+      z-index: 1;
+      text-decoration: none;
+      color: #ccc;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .nav-box a:hover {
+      background: linear-gradient(to right, #ff4e50, #f9d423);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Family Tree Grid */
+    .tree-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .category-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 2px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 20px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .category-box:hover {
+      box-shadow: 0 0 15px #ff4e50;
+    }
+
+    .category-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .member {
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    /* Color Borders */
+    .red-border { border-left: 6px solid #ff4d4d; }
+    .green-border { border-left: 6px solid #00cc66; }
+    .blue-border { border-left: 6px solid #3399ff; }
+    .purple-border { border-left: 6px solid #cc66ff; }
+    .orange-border { border-left: 6px solid #ff9933; }
+    .yellow-border { border-left: 6px solid #ffcc00; }
+    .pink-border { border-left: 6px solid #ff66cc; }
+    .aqua-border { border-left: 6px solid #00ffff; }
+
+    /* Back Button */
+    .back-button {
+      display: block;
+      margin: 50px auto;
+      padding: 12px 30px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      width: fit-content;
+    }
+
+    .back-button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .nav-box {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Family Tree</h1>
+
+  <div class="nav-box">
+    <a href="aboutb.html">ABOUT</a>
+    <a href="faimlytreethird.html">FAIMLY-TREE</a>
+    <a href="blogfour.html">BLOG</a>
+    <a href="event.html">Event</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="celebretion.html">CELEBRATION</a>
+    <a href="welcome-one.html">Welcome-Page</a>
+
+
+
+
+  </div>
+
+  <div class="tree-grid">
+
+    <div class="category-box red-border">
+      <div class="category-title">Father's Side</div>
+      <div class="member">Ravi Sharma - Father</div>
+      <div class="member">Mohan Sharma - Grandfather</div>
+      <div class="member">Neeraj Sharma - Uncle</div>
+    </div>
+
+    <div class="category-box green-border">
+      <div class="category-title">Mother's Side</div>
+      <div class="member">Suman Sharma - Mother</div>
+      <div class="member">Sunita Devi - Grandmother</div>
+      <div class="member">Anita Sharma - Aunt</div>
+    </div>
+
+    <div class="category-box blue-border">
+      <div class="category-title">Siblings</div>
+      <div class="member">Ankit Sharma - Brother</div>
+      <div class="member">Riya Sharma - Sister</div>
+    </div>
+
+    <div class="category-box purple-border">
+      <div class="category-title">Cousins</div>
+      <div class="member">Aryan Sharma</div>
+      <div class="member">Megha Sharma</div>
+    </div>
+
+    <div class="category-box yellow-border">
+      <div class="category-title">Children</div>
+      <div class="member">Aarav Sharma</div>
+      <div class="member">Anaya Sharma</div>
+    </div>
+
+    <div class="category-box pink-border">
+      <div class="category-title">In-laws</div>
+      <div class="member">Rajeev Verma - Father-in-law</div>
+      <div class="member">Lata Verma - Mother-in-law</div>
+    </div>
+
+    <div class="category-box orange-border">
+      <div class="category-title">Friends Like Family</div>
+      <div class="member">Manish Kumar</div>
+      <div class="member">Tanya Kapoor</div>
+    </div>
+
+    <div class="category-box aqua-border">
+      <div class="category-title">Others</div>
+      <div class="member">Guruji - Family Mentor</div>
+      <div class="member">Nanny Meena</div>
+    </div>
+
+  </div>
+
+  <a href="welcome.html" class="back-button">⬅️ Back to Welcome Page</a>
+
+</body>

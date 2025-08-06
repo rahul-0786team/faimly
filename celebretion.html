@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome | Dark Theme Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ------------------ Navigation ------------------ */
+    .nav-box {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: #1a1a1a;
+      padding: 15px 20px;
+      box-shadow: 0 0 10px #00ffb744;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .nav-box a {
+      text-decoration: none;
+      color: #00ffb7;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .nav-box a:hover {
+      background: linear-gradient(to right, #00ffb7, #ff4081);
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* ------------------ Marquee ------------------ */
+    .custom-marquee {
+      width: 100%;
+      overflow: hidden;
+      background: #0a0a0a;
+      color: #00ffb7;
+      padding: 10px 0;
+      font-weight: bold;
+      border-top: 1px solid #00ffb733;
+      border-bottom: 1px solid #00ffb733;
+      box-shadow: inset 0 0 5px #00ffb744;
+      position: fixed;
+      top: 65px;
+      z-index: 998;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .custom-marquee:hover .marquee-content {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ------------------ Hero Section ------------------ */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(45deg, #00ffb7, #ff4081);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #ccc;
+      max-width: 600px;
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+    }
+
+    .hero button {
+      background: #00ffb7;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #000;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hero button:hover {
+      background: #ff4081;
+      color: white;
+    }
+
+    /* ------------------ Image Slider ------------------ */
+    .slider {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      padding: 60px;
+      scroll-behavior: smooth;
+    }
+
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slide {
+      min-width: 300px;
+      height: 200px;
+      background: #222;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 255, 183, 0.2);
+      overflow: hidden;
+      transition: transform 0.4s;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide:hover {
+      transform: scale(1.05);
+    }
+
+    /* ------------------ Features ------------------ */
+    .features {
+      padding: 60px;
+      background: #1a1a1a;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00ffb7;
+    }
+
+    .features p {
+      color: #aaa;
+      font-size: 1rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* ------------------ Footer ------------------ */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+.rainbow-marquee {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  padding: 12px 0;
+  font-weight: bold;
+  border-top: 2px solid #00ffff88;
+  border-bottom: 2px solid #00ffff88;
+  position: relative;
+  box-shadow: 0 0 10px #00ffff55 inset;
+}
+
+.rainbow-content {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: rainbow-marquee-scroll 20s linear infinite;
+  font-size: 1.2rem;
+  background: linear-gradient(270deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff, #ff0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 1500% 100%;
+  animation-name: rainbow-marquee-scroll, rainbow-color-flow;
+  animation-duration: 20s, 10s;
+  animation-timing-function: linear, linear;
+  animation-iteration-count: infinite, infinite;
+}
+
+@keyframes rainbow-marquee-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes rainbow-color-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Hover Effect - marquee रुक जाए */
+.rainbow-marquee:hover .rainbow-content {
+  animation-play-state: paused;
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-box">
+    <a href="aboutb.html">ABOUT</a>
+    <a href="faimlytreethird.html">FAMILY-TREE</a>
+    <a href="blogfour.html">BLOG</a>
+    <a href="event.html">EVENT</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="celebretion.html">CELEBRATION</a>
+  </div>
+
+<div class="rainbow-marquee">
+  <div class="rainbow-content">
+    🌟 जय हिन्द! 🇮🇳 स्वतंत्रता दिवस विशेष आयोजन - 15 अगस्त को आइए हमारे साथ मनाइए | ढेर सारी देशभक्ति, उत्सव और आनंद! 🎉🎊
+  </div>
+</div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h1>Welcome to the Dark Side</h1>
+    <p>Experience a futuristic, sleek, animated dark mode website built for elegance and impact.</p>
+    <button>Get Started</button>
+  </section>
+
+  <!-- Image Slider -->
+  <section class="slider" id="gallery">
+    <div class="slide"><img src="/images/sample1.jpg" alt="Image 1"></div>
+    <div class="slide"><img src="/images/sample2.jpg" alt="Image 2"></div>
+    <div class="slide"><img src="/images/sample3.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="/images/sample4.jpg" alt="Image 4"></div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <h2>Why Choose This Site?</h2>
+    <p>With smooth animations, responsive design, hover effects, and an elegant dark layout, this website stands out from the rest.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    &copy; 2025 MyDarkSite. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

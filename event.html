@@ -1,0 +1,179 @@
+<!-- Home Page with Scroll Video Effect (Inspired by Shakuro) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AdCentrl Animated Scroll</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0e27;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: #0f1233;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-btn {
+      border: 1px solid #ffffff55;
+      padding: 8px 20px;
+      border-radius: 30px;
+      background: transparent;
+      color: white;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 80px 60px;
+      box-sizing: border-box;
+      scroll-snap-align: start;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #1a1e3a, #0f1233);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #ccc;
+      max-width: 700px;
+    }
+
+    .scroll-section {
+      background-color: #111538;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .scroll-item {
+      background: #202549;
+      border-radius: 16px;
+      padding: 30px;
+      margin: 20px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .scroll-item:hover {
+      transform: translateY(-10px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #aaa;
+      background-color: #0f1233;
+    }
+
+    html {
+      scroll-snap-type: y mandatory;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">AdCentrl</div>
+    <ul>
+      <li><a href="homepage.html">HOME</a></li>
+      <li><a href="aboutb.html">ABOUT</a></li>
+      <li><a href="faimlytreethird.html">FAIMLY-TREE</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="celebretion.html">CELEBRATION</a></li>
+      <li><a href="welcome-one.html">Welcome-Page</a></li>
+
+
+
+
+
+
+    </ul>
+    <button class="login-btn">Login</button>
+  </nav>
+
+  <section class="section hero" data-aos="fade-up">
+    <h1>Welcome to AdCentrl</h1>
+    <p>Manage all your ad campaigns with intelligent automation, real-time analytics, and team collaboration — all in one place.</p>
+  </section>
+
+  <section class="section scroll-section" data-aos="fade-up" id="features">
+    <div class="scroll-item">
+      <h3>Track Campaigns</h3>
+      <p>All your marketing campaigns at one place with real-time metrics.</p>
+    </div>
+    <div class="scroll-item">
+      <h3>Team Collaboration</h3>
+      <p>Assign tasks, share access, and manage your team efficiently.</p>
+    </div>
+    <div class="scroll-item">
+      <h3>AI Optimization</h3>
+      <p>Use AI insights to improve ROI and conversion rates effortlessly.</p>
+    </div>
+  </section>
+
+  <section class="section scroll-section" data-aos="fade-up">
+    <h2>Analytics Overview</h2>
+    <p>Get detailed breakdowns of your performance with interactive visuals.</p>
+    <img src="assets/3d-map-illustration.png" alt="Analytics Map" style="max-width:600px; margin-top: 20px;">
+  </section>
+
+  <section class="section scroll-section" data-aos="fade-up">
+    <h2>Automate Your Workflow</h2>
+    <p>Save time and money by automating key marketing operations.</p>
+  </section>
+
+  <footer data-aos="fade-up">
+    <p>© 2025 AdCentrl. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
